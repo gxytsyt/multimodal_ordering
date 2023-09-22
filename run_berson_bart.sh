@@ -1,0 +1,31 @@
+python ./berson_bart/run_glue.py \
+    --model_type facebook/bart-large \
+    --model_name_or_path facebook/bart_large \
+    --teacher_name_or_path facebook/bart_large \
+    --task_name aan \
+    --do_train \
+    --do_lower_case \
+    --data_dir YOUR/DARA/DIR1/ \
+    --fea_data_dir YOUR/DARA/DIR2/ \
+    --per_gpu_eval_batch_size=1   \
+    --per_gpu_train_batch_size=1   \
+    --gradient_accumulation_steps 1 \
+    --learning_rate 5e-6 \
+    --eval_all_checkpoints \
+    --evaluate_during_training \
+    --num_train_epochs 3.0 \
+    --logging_steps 30000 \
+    --save_steps 0 \
+    --cuda_ip cuda:0 \
+    --overwrite_output_dir \
+    --ff_size 3072 \
+    --heads 8 \
+    --para_dropout 0.1 \
+    --inter_layers 2 \
+    --dec_heads 8 \
+    --decoder_layer 2 \
+    --beam_size 16 \
+    --pairwise_loss_lam 0.4 \
+    --output_dir output/recipe/ \
+    --max_seq_length 1024
+    
