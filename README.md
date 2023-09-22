@@ -10,3 +10,11 @@ Please download pytorch_model.bin for bart-large from Huggingface/transformers (
 ```
 bash run_berson_bart.sh
 ```
+
+### Test
+```
+bash run_test.sh
+```
+
+### Dataset
+The dataset is from "Understanding Multimodal Procedural Knowledge by Sequencing Multimodal Instructional Manuals".
