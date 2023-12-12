@@ -165,8 +165,11 @@ def preprocess(batch):
 
         ################################## imgs section ########################################
         imgs = inputs['imgs']
-        img_new = torch.zeros((max_imgs_num, 3, 224, 224))
-        img_new[:imgs.shape[0], ...] = imgs
+
+        imgs_shuffled = torch.zeros((max_imgs_num, 3, 224, 224))
+        for i_pos, index_shuf in enumerate(shuffled_index):
+            imgs_shuffled[i_pos, ...] = imgs[index_shuf, ...]
+        img_new = imgs_shuffled
 
         imgs_new.append(img_new)
 
