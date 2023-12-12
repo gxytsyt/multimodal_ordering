@@ -228,6 +228,7 @@ def preprocess(batch):
         cur = 1
         cur_p = paralen + 1
         for l in len_list:
+            mm_mask[bs_i, cur_p: cur_p + img_len, cur_p: cur_p + img_len] = 1  # 每个图像可以看到自己
             for i in range(l):
                 for j in range(img_len):
                     mm_mask[bs_i, cur + i, cur_p + j] = 1
